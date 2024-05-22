@@ -25,6 +25,9 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
+        <head>
+          <link rel="icon" href="/icon.ico" type="image/x-icon" sizes="any" />
+        </head>
         <body className={poppins.className}>
           <SignedOut>
             <Header
