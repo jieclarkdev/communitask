@@ -76,7 +76,10 @@ export default function Header({ userAccount, signinButton }) {
           <Link href={"#services"} className="nav-link text-lg">
             Services
           </Link>
-          <Link href={"#contact"} className="nav-link text-lg">
+          <Link
+            href={"mailto:jieclarkdev.communitask.tech"}
+            className="nav-link text-lg"
+          >
             Contact
           </Link>
         </PopoverGroup>
