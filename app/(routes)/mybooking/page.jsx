@@ -60,8 +60,13 @@ function MyBooking() {
             </TabsContent>
           </Tabs>
         </div>
-      ) : (
+      ) : process.env.DEBUG === "true" ? (
+        /**
+         *    /mybooking endpoint protection
+         */
         redirect("https://flying-kangaroo-4.accounts.dev")
+      ) : (
+        redirect("https://accounts.communitask.tech")
       )}
     </div>
   );

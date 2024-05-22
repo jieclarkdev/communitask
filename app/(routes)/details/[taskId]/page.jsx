@@ -48,8 +48,14 @@ function TaskDetail({ params }) {
       </div>
     );
   } else if (isLoaded && !isSignedIn) {
-    // return <div>Sign in please</div>;
-    return redirect("https://flying-kangaroo-4.accounts.dev");
+    /**
+     * /details endpoint protection
+     */
+    if (process.env.DEBUG === "true") {
+      redirect("https://flying-kangaroo-4.accounts.dev");
+    } else {
+      return redirect("https://accounts.communitask.tech");
+    }
   }
 }
 
