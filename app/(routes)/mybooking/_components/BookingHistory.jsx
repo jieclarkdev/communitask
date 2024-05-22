@@ -1,11 +1,14 @@
 import Image from "next/image";
 import React from "react";
 
-function BookingHistory({ bookingHistory }) {
+function BookingHistory({ bookingHistory, completed }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
       {bookingHistory.map((booking, index) => (
-        <div key={index} className=" my-5 shadow-md p-3 rounded-lg ">
+        <div
+          key={index}
+          className={` my-5 shadow-md p-3 rounded-lg ${completed}`}
+        >
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-5">
               <div>

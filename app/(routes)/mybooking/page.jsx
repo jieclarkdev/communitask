@@ -11,6 +11,8 @@ function MyBooking() {
   const { session } = useSession();
   const emailAddress = session?.user?.primaryEmailAddress;
 
+  const completedColor = "bg-[#186a8a0e]";
+
   useEffect(() => {
     emailAddress && UserBookingHistory();
   }, [emailAddress]);
@@ -47,7 +49,10 @@ function MyBooking() {
           <BookingHistory bookingHistory={filterData("booked")} />
         </TabsContent>
         <TabsContent value="completed">
-          <BookingHistory bookingHistory={filterData("completed")} />
+          <BookingHistory
+            bookingHistory={filterData("completed")}
+            completed={completedColor}
+          />
         </TabsContent>
       </Tabs>
     </div>
