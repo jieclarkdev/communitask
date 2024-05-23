@@ -7,6 +7,7 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
+  SignUpButton,
 } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/sonner";
 import { Button } from "@/components/ui/button";
@@ -30,6 +31,9 @@ export default function RootLayout({ children }) {
             <Header
               signinButton={
                 <SignInButton className="font-semibold leading-6 text-[#18698A] text-lg hover:text-gray-800" />
+              }
+              signupButton={
+                <SignUpButton className="font-semibold leading-6 text-[#18698A] text-lg hover:text-gray-800" />
               }
             />
           </SignedOut>

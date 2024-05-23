@@ -35,7 +35,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-export default function Header({ userAccount, signinButton }) {
+export default function Header({ userAccount, signinButton, signupButton }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
@@ -97,6 +97,7 @@ export default function Header({ userAccount, signinButton }) {
             Sign in
           </a> */}
           {!userAccount ? signinButton : userAccount}
+          {!userAccount && signupButton}
         </div>
       </nav>
       <Dialog
@@ -127,7 +128,7 @@ export default function Header({ userAccount, signinButton }) {
           </div>
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
-              <div className="py-6">
+              <div className="py-6 flex flex-col justify-start items-start gap-3">
                 {/* <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#18698A] hover:bg-gray-50"
@@ -140,7 +141,10 @@ export default function Header({ userAccount, signinButton }) {
                 >
                   Register
                 </a> */}
-                {!userAccount ? signinButton : userAccount}
+                <h2 className="text-md">
+                  {!userAccount ? signinButton : userAccount}
+                </h2>
+                <h2 className="text-md"> {!userAccount && signupButton}</h2>
               </div>
               <div className="space-y-2 py-6">
                 <a
