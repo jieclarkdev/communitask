@@ -1,9 +1,10 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import GlobalApi from "@/app/_services/GlobalApi";
-import { useSession } from "@clerk/nextjs";
+import { SignInButton, useSession } from "@clerk/nextjs";
 import { TaskContent, TaskHeader, TaskSuggestion } from "../_components";
 import { redirect } from "next/navigation";
+import Image from "next/image";
 
 function TaskDetail({ params }) {
   const { isLoaded, isSignedIn, session } = useSession();
@@ -48,14 +49,25 @@ function TaskDetail({ params }) {
       </div>
     );
   } else if (isLoaded && !isSignedIn) {
-    /**
-     * /details endpoint protection
-     */
-    if (process.env.DEBUG === "true") {
-      redirect("https://flying-kangaroo-4.accounts.dev");
-    } else {
-      return redirect("https://accounts.communitask.tech");
-    }
+    return (
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+          <Image
+            src="/communitask.png"
+            width={200}
+            height={200}
+            alt="CommunITask logo"
+            style={{ height: "auto", width: "auto" }}
+            priority
+            className="mx-auto h-10 w-auto"
+          />
+          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+            You are not sign in ,{" "}
+            <SignInButton className="text-[22px] text-[#18698A]" />
+          </h2>
+        </div>
+      </div>
+    );
   }
 }
 
