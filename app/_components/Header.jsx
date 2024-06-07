@@ -84,18 +84,6 @@ export default function Header({ userAccount, signinButton, signupButton }) {
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-5 ">
-          {/* <a
-            href="#"
-            className="font-semibold leading-6 text-[#18698A]  text-lg hover:text-gray-800"
-          >
-            Register
-          </a>
-          <a
-            href="#"
-            className="font-semibold leading-6 text-[#18698A] text-lg hover:text-gray-800"
-          >
-            Sign in
-          </a> */}
           {!userAccount ? signinButton : userAccount}
           {!userAccount && signupButton}
         </div>
@@ -129,18 +117,6 @@ export default function Header({ userAccount, signinButton, signupButton }) {
           <div className="mt-6 flow-root">
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="py-6 flex flex-col justify-start items-start gap-3">
-                {/* <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#18698A] hover:bg-gray-50"
-                >
-                  Sign in
-                </a>
-                <a
-                  href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-[#18698A] hover:bg-gray-50"
-                >
-                  Register
-                </a> */}
                 <h2 className="text-md">
                   {!userAccount ? signinButton : userAccount}
                 </h2>
@@ -154,7 +130,7 @@ export default function Header({ userAccount, signinButton, signupButton }) {
                   Home
                 </a>
                 <Link
-                  href="about"
+                  href="/about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#18698A] hover:bg-gray-50"
                 >
                   About
