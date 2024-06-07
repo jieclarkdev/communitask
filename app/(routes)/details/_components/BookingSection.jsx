@@ -16,6 +16,7 @@ import GlobalApi from "@/app/_services/GlobalApi";
 import { useSession } from "@clerk/nextjs";
 import { toast } from "sonner";
 import moment from "moment";
+import { DayPicker } from "react-day-picker";
 
 function BookingSection({ children, task }) {
   const [date, setDate] = useState(new Date());
@@ -38,6 +39,7 @@ function BookingSection({ children, task }) {
 
   useEffect(() => {
     date && taskBookedSlot();
+    console.log("animal nga date", date);
   }, [date]);
 
   const getTime = () => {
@@ -114,13 +116,21 @@ function BookingSection({ children, task }) {
             </SheetDescription>
             <h2 className="mt-5">Select Available Date</h2>
             <div className="flex flex-col gap-5 items-center my-5">
-              <Calendar
+              {/* <Calendar
                 mode="single"
                 selected={date}
                 onSelect={setDate}
-                className="rounded-md border "
-              />
+                className="rounded-md border"
+              /> */}
             </div>
+            <DayPicker
+              mode="single"
+              selected={date}
+              onSelect={setDate}
+              showOutsideDays={false}
+              toDate={Date.now()}
+              today={Date.now()}
+            />
             {/* Time slots */}
             <h2 className="mb-5">Select time slots</h2>
             <div className="grid grid-cols-3 gap-2">

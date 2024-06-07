@@ -70,7 +70,7 @@ export default function Header({ userAccount, signinButton, signupButton }) {
           <Link href={"/"} className="nav-link text-lg">
             Home
           </Link>
-          <Link href={"#about"} className="nav-link text-lg">
+          <Link href={"/about"} className="nav-link text-lg">
             About
           </Link>
           <Link href={"#services"} className="nav-link text-lg">
@@ -153,12 +153,12 @@ export default function Header({ userAccount, signinButton, signupButton }) {
                 >
                   Home
                 </a>
-                <a
-                  href="#"
+                <Link
+                  href="about"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#18698A] hover:bg-gray-50"
                 >
                   About
-                </a>
+                </Link>
                 <a
                   href="#"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-[#18698A] hover:bg-gray-50"
